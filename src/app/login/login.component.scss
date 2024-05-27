@@ -1,0 +1,36 @@
+
+
+$moduleFont: Helvetica, sans-serif;
+$moduleColor: #0400ff;
+$moduleFontSize: 18px;
+$containerWidth: 680px;
+$space:15px;
+
+
+body {
+  font-family: $moduleFont;
+  font-size: $moduleFontSize;
+  color: $moduleColor;
+}
+
+#container {
+  width: $containerWidth;
+  margin:auto;
+}
+
+h1 {
+  $moduleColor: red;
+  color: $moduleColor;
+  $moduleFontSize: 22px;
+  font-size: $moduleFontSize;
+}
+
+p {
+  color: $moduleColor;
+ 
+}        
+
+#top-space {
+ margin-top: $space;
+}
+

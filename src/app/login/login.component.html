@@ -1,0 +1,67 @@
+<h1>Pagina di Login!</h1>
+
+
+<!-- Example Code -->
+
+<div class="p-5 text-center bg-body-tertiary rounded-3" id="container">
+
+    <div class="form-floating mb-3">
+        <h2 class="display-5">Fill in the form to sign in</h2>
+        <div id="top-space"> 
+            <br>
+        </div>
+    </div>
+     <!--loginForm: FormGroup;  -->
+    <form [formGroup]="loginForm">
+    <div class="form-floating" >   
+            <p>
+                <label for="email">Email</label>
+                <!--(input) ho inserito l'evento onInput($event) per registrare il dato inserito -->
+                 <input (input)="onInput($event)" type="email" class="form-control" formControlName="email" placeholder="name@example.com" id="email"> 
+            
+            <p>
+            <label for="password">Password</label>
+             <input type="password" class="form-control" formControlName="password" placeholder="Password" id="password">
+        </p>
+        <div id="top-space"> 
+         <br>
+        </div>
+    </div>
+    <div class="d-inline-flex gap-2 mb-5">
+        <button class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill" type="button" (click)="login()">
+          Login 
+        </button>
+    </div>
+    <!-- 1) To control if data fill in modules are correct -->
+    <div  class="d-inline-flex gap-2 mb-5 messages" *ngIf="loginForm.touched && loginForm.invalid" class="alert alert-danger" >
+        <ul>   <!-- [routerLink]="['message', message.id]" --> 
+            <li *ngFor="let message of messages">    
+              <h1>{{ message.title }}</h1> 
+              <h6>{{ message.message }}</h6>   
+            </li>    
+        </ul>    
+    </div> 
+     <!-- 2)  To control if data fill in modules are correct -->
+    <div *ngIf="loginForm.controls['email'].invalid && (loginForm.controls['email'].dirty || loginForm.controls['email'].touched)" class="alert">
+        <div *ngIf="loginForm.controls['email'].errors">
+             <h1>Please, enter your email!</h1>
+        </div>
+      <p>LoginForm value: {{ loginForm.value.email | json }}</p>
+      <p>LoginForm status: {{ loginForm.status | json }}</p>
+    </div>
+    <div *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)" class="alert">
+        <div *ngIf="loginForm.controls['password'].errors">
+             <h1>Please, enter your password!</h1>
+        </div>
+      <p>loginForm value: {{ loginForm.value.password | json }}</p>
+      <p>loginForm status: {{ loginForm.status | json }}</p>
+    </div>
+</form>
+</div>
+<!-- End Example Code -->
+
+
+
+    
+
+    

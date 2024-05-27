@@ -1,0 +1,31 @@
+/* Define variables and values */
+
+$bgcolor: lightblue;
+$textcolor: rgb(3, 3, 87);
+$fontsize: 18px;
+$h3size: 20px;
+$h6size: 16px;
+$greenColor: green;
+
+/* Use the variables */
+div {
+    background-color: $bgcolor;
+    color: $textcolor;
+    font-size: $fontsize;
+  }
+
+  h6 {
+    font-size: $h6size;
+    color: $greenColor;
+  }
+
+  h3 {
+    font-size: $h3size;
+    color: $textcolor;
+  }
+
+
+  span {
+    $textcolor: rgb(128, 4, 0);
+    color: $textcolor;
+  }

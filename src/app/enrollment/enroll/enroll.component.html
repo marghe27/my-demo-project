@@ -1,0 +1,20 @@
+<p>Enroll works!</p>
+ <!-- /*  */ -->
+ 
+ <div class="container p-5 my-5 border col-md-3">
+
+  <ul class="list-unstyled mt-6 mb-0" *ngFor="let datalog of data;">
+    <li class="py-2">
+    <div   class="d-flex gap-2 w-100 justify-content-between">
+      <div>
+        <h3 class="mb-0">Email  <span>{{ datalog.email }};</span></h3> 
+        <h3 class="mb-0">Password <span> {{ datalog.password }}.</span></h3>   
+      </div>
+    </div>
+  </li>
+  </ul>
+ </div>
+
+ <div class="container pt-5">
+	<button (click)="sendDataToParent()" class="btn btn-warning">Send data to Parent</button>
+</div>

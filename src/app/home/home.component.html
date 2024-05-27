@@ -1,0 +1,58 @@
+<p>HOME works!</p>
+
+<!-- Data binding per condividere i dati con il PARENT home.component: CHILD verso PARENT-->
+<!-- il metodo  receiveDATA() serve al Parent per restare in ascolto del Child-->
+<app-enroll (sendDATA)="receiveDATA($event)"></app-enroll>
+
+<!-- Data binding per condividere i dati con il CHILD enroll.component: PARENT verso CHILD-->
+<app-enroll [data]="dataForLogging"></app-enroll>
+<div class="container pt-5">
+	<button (click)="onClick()" class="btn btn-warning">Change</button>
+</div>
+
+
+<div class="container pt-5">
+	<input #inputToWave value="Ciao!">
+	<div class="d-inline-flex gap-2 mb-5">
+		<button (click)="OnClickViewChild()" class="d-inline-flex align-items-center btn btn-secondary btn-lg px-4 rounded-pill" type="button">
+			ViewChild
+		</button> 
+</div>
+
+
+
+  <div class="container pt-5 col-md-3">
+  <div class="card">
+    <div class="card-body">
+     <h3>Utente con email:<p class="alert alert-warning" >{{this.data}}</p> </h3>
+		<form>
+		<div class="d-inline-flex gap-2 mb-5">
+		  <button (click)="logout()" class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill" type="button">
+			Logout
+		  </button> 
+	  </div>
+	  </form>
+    </div>
+  </div>
+</div>
+
+<!-- utilizzo di SwitchCase -->
+<div class="container pt-5">
+
+	<div [ngSwitch]="messages">
+		<div *ngSwitchCase="'admin'">
+			<button>Gestione utenti</button>
+			<button>Gestione documenti</button>
+		</div>
+		<div *ngSwitchCase="'manager'">
+			<button>Gestione documenti</button>
+			<button>Visualizza pratiche</button>
+		</div>
+		<div *ngSwitchCase="'utente'">
+			<button>Visualizza pratiche</button>
+		</div>
+		<div *ngSwitchDefault>
+			<button type="button" class="btn btn-info">Contatta l'assistenza</button>
+		</div>
+	</div>
+</div>
